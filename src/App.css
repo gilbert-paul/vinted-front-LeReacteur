@@ -161,3 +161,18 @@ font-weight: bold;
 margin-bottom:40px;
 
 }
+
+
+/* CAROUSEL */
+
+button.react-multiple-carousel__arrow.react-multiple-carousel__arrow--right, button.react-multiple-carousel__arrow.react-multiple-carousel__arrow--left{
+  width: auto;
+  min-height: auto;
+  bottom: 25px;
+  font-size: 0.5em;
+  
+  }
+
+  .react-multi-carousel-item{
+    display: flex;
+  }

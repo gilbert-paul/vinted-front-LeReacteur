@@ -37,6 +37,7 @@ const RAW_RUNTIME_STATE =
           ["eslint-plugin-react-refresh", "virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:0.4.7"],\
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:18.3.1"],\
+          ["react-multi-carousel", "npm:2.8.5"],\
           ["react-router-dom", "virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:6.23.1"],\
           ["vite", "virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:5.2.13"]\
         ],\
@@ -3723,6 +3724,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["react-multi-carousel", [\
+      ["npm:2.8.5", {\
+        "packageLocation": "../../../../.yarn/berry/cache/react-multi-carousel-npm-2.8.5-deb66f82c0-10c0.zip/node_modules/react-multi-carousel/",\
+        "packageDependencies": [\
+          ["react-multi-carousel", "npm:2.8.5"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["react-refresh", [\
       ["npm:0.14.2", {\
         "packageLocation": "../../../../.yarn/berry/cache/react-refresh-npm-0.14.2-95df341b4d-10c0.zip/node_modules/react-refresh/",\
@@ -4411,6 +4421,7 @@ const RAW_RUNTIME_STATE =
           ["eslint-plugin-react-refresh", "virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:0.4.7"],\
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:18.3.1"],\
+          ["react-multi-carousel", "npm:2.8.5"],\
           ["react-router-dom", "virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:6.23.1"],\
           ["vite", "virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:5.2.13"]\
         ],\

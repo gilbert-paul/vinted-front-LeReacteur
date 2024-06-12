@@ -8,18 +8,23 @@ import axios from "axios";
 
 const Home = ({ url }) => {
   const [isLoading, setIsLoading] = useState(true);
-  const [querys, setQuerys] = useState({});
+  const [querys, setQuerys] = useState({ page: 1, limit: 20 });
   const [data, setData] = useState([]);
   const [isOffer, setIsOffer] = useState(false);
   const location = useLocation();
-
+  const [numberPages, setNumberPages] = useState([1]);
   useEffect(() => {
     const fetchQuerys = async () => {
       const allQuerys = location.search.replace("?", "").split("&");
-      const querysArray = allQuerys.map((elem) => {
-        return elem.split("=");
-      });
-      setQuerys(Object.fromEntries(querysArray));
+      if (allQuerys.length > 1) {
+        const querysUrlArray = Object.fromEntries(allQuerys.split("="));
+        if (querysUrlArray.page) {
+          querysArray.page = querysUrlArray.page;
+        }
+        if (querysUrlArray.limit) {
+          querysArray.limit = querysUrlArray.limit;
+        }
+      }
     };
     fetchQuerys();
   }, []);
@@ -31,14 +36,20 @@ const Home = ({ url }) => {
         .then((response) => {
           setData(response.data);
           setIsOffer(true);
+          
+          const numberOfPages = [1];
+          for (let i = 1; i < (Math.ceil(data.count / querys.limit)); i++) {
+            numberOfPages.push(i + 1);
+
+          }
+          setNumberPages(numberOfPages);
           setIsLoading(false);
         })
         .catch((error) => {
           setData([error.response.data]);
-          setIsOffer(false)
+          setIsOffer(false);
         });
     };
-
     fetchData(querys.page, querys.limit);
   }, [querys]);
 
@@ -57,6 +68,46 @@ const Home = ({ url }) => {
               <button className="primary-btn">Commencer à vendre</button>
             </div>
           </div>
+          <section className="container __pagination">
+            <div>
+              <label htmlFor="page">Page :
+                <select value={querys.page}
+                  onChange={(event) => {
+                    setQuerys({
+                      page: Number(event.target.value),
+                      limit: querys.limit,
+                    });
+                  }}
+                  name="page"
+                  id="page"
+                >
+
+                  {numberPages.map((elem) => {
+                   return <option key={elem} value={Number(elem)}>{elem}</option>;
+                  })
+                  }
+                </select>
+                </label>
+                <label htmlFor="limit">Articles par page :
+
+                <select value={querys.limit}
+                  onChange={(event) => {
+                    setQuerys({
+                      page: querys.page,
+                      limit: Number(event.target.value),
+                    });
+                  }}
+                  name="limit"
+                  id="limit"
+                >
+                  <option value="5">5</option>
+                  <option value="10">10</option>
+                  <option value="20">20</option>
+                  <option value="30">30</option>
+                </select>
+                </label>
+            </div>
+          </section>
           <section className="container">
             {!isOffer ? (
               <div className="__alert-info">

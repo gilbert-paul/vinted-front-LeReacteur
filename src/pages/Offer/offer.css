@@ -19,12 +19,15 @@ section.__offer-card>div {
 section.__offer-card .__image-offer {
   flex: 0 1 30%;
   padding:20px;
-
+  max-height: 650px;
+}
+section.__offer-card .__image-offer > div, section.__offer-card .__image-offer >img{
+  height:300px
 }
 section.__offer-card .__image-offer img {
-  height: 600px;
   width:100%;
-  object-fit: contain;
+  object-fit: cover;
+  
 }
 
 section.__offer-card .__details-offer {
@@ -79,4 +82,16 @@ section.__offer-card div.__false-image {
   width: 100%;
   background-color: var(--thirty-color);
 
+}
+
+.__image-offer .__my-carousel{
+  padding:20px;
+}
+.__carousel{
+  width:100%;
+  height:250px;
+}
+.__carousel img{
+  height:250px;
+  object-position: center;
 }

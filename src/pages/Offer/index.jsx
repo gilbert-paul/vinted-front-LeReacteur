@@ -4,12 +4,31 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import Button from "../../components/Button";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import {useLocation} from "react-router-dom";
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
 
 
 const Offer = ({ url }) => {
-
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 2
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 1
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 1
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1
+    }
+  };
 
   const [dataOffer, setDataOffer] = useState({});
   const [isLoading, setIsLoading] = useState(true);
@@ -34,7 +53,27 @@ const Offer = ({ url }) => {
             <section className="__offer-card">
               <div className="__image-offer">
                 {dataOffer.product_image ? (
+                  <>
                     <img src={dataOffer.product_image} alt="" />
+                    
+                    <div className="__my-carousel">
+
+                    <Carousel responsive={responsive}>
+                      {dataOffer.product_pictures.map(picture=>{
+                        if(dataOffer.product_pictures.length === 1){
+                          return (<></>)
+                          } else{
+                            
+                            return (<div key={picture} className="__carousel">
+                    <img src={picture} alt="more pictures" />
+                    </div>)
+                    }
+                    })}
+
+
+                    </Carousel>
+                  </div>
+                  </>
                 ) : (
                   <div className="__false-image"></div>
                 )}

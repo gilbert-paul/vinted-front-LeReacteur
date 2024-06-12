@@ -108,6 +108,29 @@ article.__offer-card .__article-card h3 {
 
 }
 
+section.__pagination{
+  display: flex;
+  justify-content: flex-end;
+}
+section.__pagination div{
+display: flex;
+gap:40px;
+}
+label{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap:10px;
+}
+select {
+  border: solid 1px var(--primary-color);
+    background: var(--secondary-color);
+    padding: .5em 1em;
+    border-radius: 5px;
+    width:100%
+}
+
 .__falseImage{
   width:100%;
   height:100%;
