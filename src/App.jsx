@@ -18,7 +18,7 @@ function App() {
           <Header/>
       <Routes>
         
-        <Route path="/?page=1&limit" element={<Home url={url} />}/>
+        <Route path="/" element={<Home url={url} />}/>
         <Route path="/offer/:id" element={<Offer url={url} />}/>
       </Routes>
       <Footer/>
