@@ -93,7 +93,7 @@ const Home = ({ url }) => {
                 <select value={querys.limit}
                   onChange={(event) => {
                     setQuerys({
-                      page: querys.page,
+                      page: 1,
                       limit: Number(event.target.value),
                     });
                   }}
