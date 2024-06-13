@@ -61,10 +61,10 @@ const Home = ({ url }) => {
  
                 <Dropdown title='Page' values={{
                   page:numberPages,
-                  limit:querys.limit}} setQuerys={setQuerys} limit={false} querys={querys}/>
+                  limit:querys.limit}} setData={setQuerys} data={querys}/>
                   <Dropdown title='Articles par page' values={{
                   page:[1],
-                  limit:[5,10,20,30]}} setQuerys={setQuerys} limit={true} querys={querys}/>
+                  limit:[5,10,20,30]}} setData={setQuerys} limit={true} data={querys}/>
 
                 
             </div>

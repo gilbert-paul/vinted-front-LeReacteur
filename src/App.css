@@ -183,12 +183,12 @@ content:"△"
   width:100%
 }
 .dropdown ul a li{
-  width:50%;
+  width:100%;
   padding-bottom:5px;
   margin-bottom:5px;
 }
 .dropdown ul li:not(first-child){
-  border-bottom: solid 1px var(--thirty-color);
+  border-bottom: solid 1px var(--fourty-color);
 }
 
 /* CAROUSEL */

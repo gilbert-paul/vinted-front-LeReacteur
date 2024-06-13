@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
-const Dropdown = ({ title, values, setQuerys, limit, querys}) => {
+const Dropdown = ({ title, values, setData, data, limit=false}) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="dropdown">
-      <button className={isOpen?"primary-btn active":"primary-btn"} onClick={() => setIsOpen(!isOpen)}>{limit?`${title} - ${querys.limit}`:`${title} - ${querys.page}`}</button>
+      <button className={isOpen?"primary-btn active":"primary-btn"} onClick={() => setIsOpen(!isOpen)}>{limit?`${title} - ${data.limit}`:`${title} - ${data.page}`}</button>
       {isOpen ? (
         <ul className="secondary-btn">
           {limit? <>
@@ -15,7 +15,7 @@ const Dropdown = ({ title, values, setQuerys, limit, querys}) => {
                 <li
                   onClick={() => {
                     setIsOpen(!isOpen)
-                    setQuerys({
+                    setData({
                       page: (values.page),
                       limit: (value),
                       });
@@ -30,15 +30,12 @@ const Dropdown = ({ title, values, setQuerys, limit, querys}) => {
         :
         <>
           {values.page.map((value) => {
-            console.log(value)
-
             return (
               <Link to={`?page=${value}&limit=${values.limit}`}>
                 <li 
                   onClick={() => {
                     setIsOpen(!isOpen)
-
-                    setQuerys({
+                    setData({
                       page: (value),
                       limit: (values.limit),
                       });
