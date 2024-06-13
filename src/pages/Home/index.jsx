@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Dropdown from "../../components/Dropdown";
 
 const Home = ({ url }) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -13,21 +14,7 @@ const Home = ({ url }) => {
   const [isOffer, setIsOffer] = useState(false);
   const location = useLocation();
   const [numberPages, setNumberPages] = useState([1]);
-  useEffect(() => {
-    const fetchQuerys = async () => {
-      const allQuerys = location.search.replace("?", "").split("&");
-      if (allQuerys.length > 1) {
-        const querysUrlArray = Object.fromEntries(allQuerys.split("="));
-        if (querysUrlArray.page) {
-          querysArray.page = querysUrlArray.page;
-        }
-        if (querysUrlArray.limit) {
-          querysArray.limit = querysUrlArray.limit;
-        }
-      }
-    };
-    fetchQuerys();
-  }, []);
+
 
   useEffect(() => {
     const fetchData = async (page, limit) => {
@@ -66,46 +53,20 @@ const Home = ({ url }) => {
             <div className="__sell">
               <h2>Prêt à faire du tri dans vos placards ?</h2>
               <button className="primary-btn">Commencer à vendre</button>
+
             </div>
           </div>
           <section className="container __pagination">
             <div>
-              <label htmlFor="page">Page :
-                <select value={querys.page}
-                  onChange={(event) => {
-                    setQuerys({
-                      page: Number(event.target.value),
-                      limit: querys.limit,
-                    });
-                  }}
-                  name="page"
-                  id="page"
-                >
+ 
+                <Dropdown title='Page' values={{
+                  page:numberPages,
+                  limit:querys.limit}} setQuerys={setQuerys} limit={false} querys={querys}/>
+                  <Dropdown title='Articles par page' values={{
+                  page:[1],
+                  limit:[5,10,20,30]}} setQuerys={setQuerys} limit={true} querys={querys}/>
 
-                  {numberPages.map((elem) => {
-                   return <option key={elem} value={Number(elem)}>{elem}</option>;
-                  })
-                  }
-                </select>
-                </label>
-                <label htmlFor="limit">Articles par page :
-
-                <select value={querys.limit}
-                  onChange={(event) => {
-                    setQuerys({
-                      page: 1,
-                      limit: Number(event.target.value),
-                    });
-                  }}
-                  name="limit"
-                  id="limit"
-                >
-                  <option value="5">5</option>
-                  <option value="10">10</option>
-                  <option value="20">20</option>
-                  <option value="30">30</option>
-                </select>
-                </label>
+                
             </div>
           </section>
           <section className="container">

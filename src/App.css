@@ -34,13 +34,13 @@ button:hover{
   cursor:pointer;
 }
 
-button.primary-btn {
+.primary-btn {
   background-color: var(--primary-color);
   color: var(--secondary-color);
   border: 1px solid var(--secondary-color);
 }
 
-button.secondary-btn {
+.secondary-btn {
 
   background-color: var(--secondary-color);
   border: 1px solid var(--primary-color);
@@ -161,7 +161,35 @@ font-weight: bold;
 margin-bottom:40px;
 
 }
-
+.dropdown{position:relative;}
+.dropdown button {
+  width:auto;
+}
+.dropdown button:after {
+content:"▽";
+margin-left:10px;
+}
+.dropdown button.active:after {
+content:"△"
+}
+.dropdown ul {
+  position: absolute;
+  top:100%;
+  width:100%;
+  padding:5px;
+  border-radius:5px;
+}
+.dropdown ul a{
+  width:100%
+}
+.dropdown ul a li{
+  width:50%;
+  padding-bottom:5px;
+  margin-bottom:5px;
+}
+.dropdown ul li:not(first-child){
+  border-bottom: solid 1px var(--thirty-color);
+}
 
 /* CAROUSEL */
 
