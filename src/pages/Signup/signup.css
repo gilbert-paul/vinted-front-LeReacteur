@@ -17,7 +17,8 @@ main.__signup .container form{
   display: flex;
   flex-direction: column;
   gap:20px;
-  width:400px;
+  max-width:400px;
+
   margin-bottom:20px;
 }
 main.__signup .container form input{

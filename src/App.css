@@ -250,6 +250,7 @@ button.react-multiple-carousel__arrow.react-multiple-carousel__arrow--left {
 
 .container-modal .__to-close {
   position: relative;
+  margin:40px;
 }
 
 .container-modal i {
