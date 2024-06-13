@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const Signup = ({ url }) => {
+const Signup = ({ url, setModalIsVisible }) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -26,12 +26,12 @@ const Signup = ({ url }) => {
     const fetchData = async (newUser) => {
       await axios
         .post(`${url}/user/signup`, newUser)
-        .then((response) => {
-          console.log(response.data)
+        .then(async(response) => {
           setIsCreated({ created: true, message: response.data.message });
+          setModalIsVisible({login:true,singup:false})
+
         })
         .catch((error) => {
-          console.log(error.response)
           setIsCreated({ created: false, message: error.response.data.message });
         });
     };
@@ -52,6 +52,7 @@ const Signup = ({ url }) => {
       password: password,
       newsletter: `${newsletter}`,
       });
+
   };
   return (
     <>
@@ -100,7 +101,10 @@ const Signup = ({ url }) => {
           </form>
           {isCreated.created !== "notLaunch" ? 
           <div className={isCreated.created? '__answer __success':'__answer __alert'}>{isCreated.message}</div> : <></>}
-          <p>Tu as déjà un compte ? Connecte-toi !</p>
+          <p onClick={()=>{
+                      setModalIsVisible({login:true,singup:false})
+
+          }}>Tu as déjà un compte ? Connecte-toi !</p>
         </div>
       </main>
     </>

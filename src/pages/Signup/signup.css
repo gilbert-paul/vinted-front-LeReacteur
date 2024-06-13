@@ -51,6 +51,10 @@ main.__signup .container form button {
 main.__signup .container > p:last-of-type{
   color:var(--primary-color)
 }
+main.__signup .container > p:last-of-type:hover{
+cursor:pointer;
+}
+
 
 
 .__answer {

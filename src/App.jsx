@@ -8,18 +8,25 @@ import Signup from './pages/Signup/index.jsx'
 import Offer from './pages/Offer/index.jsx';
 import Login from './pages/Login/index.jsx';
 import Footer from './components/Footer';
+import Modal from "./components/Modal.jsx"
 import { useState } from 'react';
 import Cookies from "js-cookie"
 
 
 function App() {
   const url = import.meta.env.VITE_APP_BACK_URL
-  const [token, setToken] = useState("")
- 
+  const [modalIsVisible, setModalIsVisible] = useState({login:false,signup:false})
+
+  if(modalIsVisible.signup || modalIsVisible.login){
+    document.body.style.overflowY="hidden"
+  } else {
+    document.body.style.overflowY="initial"
+
+  }
 
   return (
     <Router>
-          <Header token={token} setToken={setToken}/>
+          <Header modalIsVisible={modalIsVisible} setModalIsVisible={setModalIsVisible}/>
       <Routes>
         
         <Route path="/" element={<Home url={url} />}/>
@@ -30,6 +37,8 @@ function App() {
 
       </Routes>
       <Footer/>
+      {modalIsVisible.login && <Modal content={<Login url={url} setModalIsVisible={setModalIsVisible} />} modalIsVisible={modalIsVisible} setModalIsVisible={setModalIsVisible}/>}
+      {modalIsVisible.signup && <Modal content={<Signup setModalIsVisible={setModalIsVisible} url={url}/>} modalIsVisible={modalIsVisible} setModalIsVisible={setModalIsVisible}/>}
     </Router>
   )
 }

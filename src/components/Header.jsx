@@ -8,16 +8,15 @@ import {useNavigate} from "react-router-dom"
 
 
 
-const Header = (token, setToken) => {
+const Header = ({modalIsVisible, setModalIsVisible}) => {
   const navigate =useNavigate()
   const [hideFilters, setHideFilters] = useState(false)
   const location = useLocation()
   useEffect(()=>{
-
-    if(location.pathname.search("/")){
-      setHideFilters(true);
-    } else {setHideFilters(false)}
-    },[])
+    if(location.pathname === "/"){
+      setHideFilters(false);
+    } else {setHideFilters(true)}
+    },[location])
 
   return (
     <header>
@@ -49,11 +48,14 @@ const Header = (token, setToken) => {
           )}
         </article>
         <article className="__connexion-area">
-          <Button className="secondary-btn" title={"S'inscrire"} />
+          
           {!Cookies.get("token")?
-        <Link to="/user/login"><Button className="secondary-btn" title="Se connecter" /></Link>         
+          <>
+          <Button className="secondary-btn" title={"S'inscrire"} modalIsVisible={modalIsVisible} setModalIsVisible={setModalIsVisible}  modal="signup" />
+        <Button className="secondary-btn" title="Se connecter" modalIsVisible={modalIsVisible} setModalIsVisible={setModalIsVisible} modal="login"/>        
+          </>
         :
-        <Button className="primary-btn" title="Se déconnecter" disconnected={true}/>
+        <Button className="primary-btn" title="Se déconnecter"  disconnected={true} />
         }
         </article>
         <article className="__sell-area">
