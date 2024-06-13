@@ -15,13 +15,12 @@ const Home = ({ url }) => {
   const location = useLocation();
   const [numberPages, setNumberPages] = useState([1]);
 
-
   useEffect(() => {
     const fetchData = async (page, limit) => {
       await axios
         .get(`${url}/offers/?page=${page}&limit=${limit}`)
         .then((response) => {
-          setData(response.data);
+          setData(response.data.data);
           setIsOffer(true);
           
           const numberOfPages = [1];
@@ -33,7 +32,7 @@ const Home = ({ url }) => {
           setIsLoading(false);
         })
         .catch((error) => {
-          setData([error.response.data]);
+          setData([error.response.data.message]);
           setIsOffer(false);
         });
     };

@@ -35,6 +35,7 @@ const RAW_RUNTIME_STATE =
           ["eslint-plugin-react", "virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:7.34.2"],\
           ["eslint-plugin-react-hooks", "virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:4.6.2"],\
           ["eslint-plugin-react-refresh", "virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:0.4.7"],\
+          ["js-cookie", "npm:3.0.5"],\
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:18.3.1"],\
           ["react-multi-carousel", "npm:2.8.5"],\
@@ -2993,6 +2994,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["js-cookie", [\
+      ["npm:3.0.5", {\
+        "packageLocation": "../../../../.yarn/berry/cache/js-cookie-npm-3.0.5-8fc8fcc9b4-10c0.zip/node_modules/js-cookie/",\
+        "packageDependencies": [\
+          ["js-cookie", "npm:3.0.5"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["js-tokens", [\
       ["npm:4.0.0", {\
         "packageLocation": "../../../../.yarn/berry/cache/js-tokens-npm-4.0.0-0ac852e9e2-10c0.zip/node_modules/js-tokens/",\
@@ -4419,6 +4429,7 @@ const RAW_RUNTIME_STATE =
           ["eslint-plugin-react", "virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:7.34.2"],\
           ["eslint-plugin-react-hooks", "virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:4.6.2"],\
           ["eslint-plugin-react-refresh", "virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:0.4.7"],\
+          ["js-cookie", "npm:3.0.5"],\
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:18.3.1"],\
           ["react-multi-carousel", "npm:2.8.5"],\

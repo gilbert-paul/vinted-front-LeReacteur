@@ -3,17 +3,22 @@ import Button from "../components/Button";
 import logoVinted from "../assets/img/logoVinted.png";
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Cookies from "js-cookie"
+import {useNavigate} from "react-router-dom"
 
 
-const Header = () => {
-  const [hideFilters, setHideFilters] = useState(true)
+
+const Header = (token, setToken) => {
+  const navigate =useNavigate()
+  const [hideFilters, setHideFilters] = useState(false)
   const location = useLocation()
   useEffect(()=>{
 
-    if(location.pathname.search("/offer")){
-      setHideFilters(false);
-    } else {setHideFilters(true)}
-  },[])
+    if(location.pathname.search("/")){
+      setHideFilters(true);
+    } else {setHideFilters(false)}
+    },[])
+
   return (
     <header>
       <div className="container">
@@ -45,7 +50,11 @@ const Header = () => {
         </article>
         <article className="__connexion-area">
           <Button className="secondary-btn" title={"S'inscrire"} />
-          <Button className="secondary-btn" title={"Se connecter"} />
+          {!Cookies.get("token")?
+        <Link to="/user/login"><Button className="secondary-btn" title="Se connecter" /></Link>         
+        :
+        <Button className="primary-btn" title="Se déconnecter" disconnected={true}/>
+        }
         </article>
         <article className="__sell-area">
           <Button className="primary-btn" title={"Vends tes articles"} />

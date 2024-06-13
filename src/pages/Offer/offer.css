@@ -1,5 +1,5 @@
 div.__offer-body {
-  background-color: var(--fourty-color);
+  background-color: var(--fourth-color);
   height: calc(100vh - 85px);
 }
 
@@ -52,7 +52,7 @@ section.__offer-card .__details-offer .__informations-offer div {
 }
 
 section.__offer-card .__details-offer .__informations-offer div span:first-of-type {
-  color: var(--thirty-color)
+  color: var(--third-color)
 }
 
 section.__offer-card .__details-offer .__content-offer p {
@@ -64,11 +64,11 @@ section.__offer-card .__details-offer .__content-offer p:first-of-type {
 }
 
 section.__offer-card .__details-offer .__content-offer p:last-of-type {
-  color: var(--thirty-color)
+  color: var(--third-color)
 }
 
 section.__offer-card hr {
-  border: solid 1px var(--thirty-color);
+  border: solid 1px var(--third-color);
   width: 100%
 }
 
@@ -80,7 +80,7 @@ section.__offer-card button {
 section.__offer-card div.__false-image {
   height: 600px;
   width: 100%;
-  background-color: var(--thirty-color);
+  background-color: var(--third-color);
 
 }
 

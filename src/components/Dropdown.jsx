@@ -11,7 +11,7 @@ const Dropdown = ({ title, values, setData, data, limit=false}) => {
           {limit? <>
           {values.limit.map((value) => {
             return (
-              <Link to={`?page=${values.page}&limit=${value}`}>
+              <Link key={value} to={`?page=${values.page}&limit=${value}`}>
                 <li
                   onClick={() => {
                     setIsOpen(!isOpen)
@@ -31,7 +31,7 @@ const Dropdown = ({ title, values, setData, data, limit=false}) => {
         <>
           {values.page.map((value) => {
             return (
-              <Link to={`?page=${value}&limit=${values.limit}`}>
+              <Link key ={value} to={`?page=${value}&limit=${values.limit}`}>
                 <li 
                   onClick={() => {
                     setIsOpen(!isOpen)

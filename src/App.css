@@ -1,11 +1,14 @@
 @import url(./pages/Home/home.css);
 @import url(./pages/Offer/offer.css);
+@import url(./pages/Signup/signup.css);
+@import url(./pages/Login/login.css);
+
 
 :root {
   --primary-color: #2cb1ba;
   --secondary-color: #FFF;
-  --thirty-color:#BBB;
-  --fourty-color:#F5F6F7;
+  --third-color:#BBB;
+  --fourth-color:#F5F6F7;
   font-size: 16px;
 }
 
@@ -98,7 +101,7 @@ header .container article.__searching-area .__filter {
 
 header .container article.__searching-area .__search input {
   flex-basis: 100%;
-  background-color:var(--fourty-color);
+  background-color:var(--fourth-color);
   padding-left:30px;
   height:30px;
   font-size:1.125em;
@@ -106,13 +109,13 @@ header .container article.__searching-area .__search input {
   border-radius:5px;
 }
 header .container article.__searching-area .__search input::placeholder {
-  color:var(--thirty-color);
+  color:var(--third-color);
 
 }
 header .container article.__searching-area .__search i {
 left:6px;
 font-size:1.125em;
-color:var(--thirty-color);
+color:var(--third-color);
 position: absolute;
 }
 
@@ -188,7 +191,7 @@ content:"△"
   margin-bottom:5px;
 }
 .dropdown ul li:not(first-child){
-  border-bottom: solid 1px var(--fourty-color);
+  border-bottom: solid 1px var(--fourth-color);
 }
 
 /* CAROUSEL */
