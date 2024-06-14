@@ -36,9 +36,11 @@ const RAW_RUNTIME_STATE =
           ["eslint-plugin-react-hooks", "virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:4.6.2"],\
           ["eslint-plugin-react-refresh", "virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:0.4.7"],\
           ["js-cookie", "npm:3.0.5"],\
+          ["multi-range-slider-react", "npm:2.0.7"],\
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:18.3.1"],\
           ["react-multi-carousel", "npm:2.8.5"],\
+          ["react-range", "virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:1.8.14"],\
           ["react-router-dom", "virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:6.23.1"],\
           ["vite", "virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:5.2.13"]\
         ],\
@@ -3320,6 +3322,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["multi-range-slider-react", [\
+      ["npm:2.0.7", {\
+        "packageLocation": "../../../../.yarn/berry/cache/multi-range-slider-react-npm-2.0.7-cd781cd67b-10c0.zip/node_modules/multi-range-slider-react/",\
+        "packageDependencies": [\
+          ["multi-range-slider-react", "npm:2.0.7"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["nanoid", [\
       ["npm:3.3.7", {\
         "packageLocation": "../../../../.yarn/berry/cache/nanoid-npm-3.3.7-98824ba130-10c0.zip/node_modules/nanoid/",\
@@ -3739,6 +3750,32 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../../.yarn/berry/cache/react-multi-carousel-npm-2.8.5-deb66f82c0-10c0.zip/node_modules/react-multi-carousel/",\
         "packageDependencies": [\
           ["react-multi-carousel", "npm:2.8.5"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["react-range", [\
+      ["npm:1.8.14", {\
+        "packageLocation": "../../../../.yarn/berry/cache/react-range-npm-1.8.14-9ed0444700-10c0.zip/node_modules/react-range/",\
+        "packageDependencies": [\
+          ["react-range", "npm:1.8.14"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:1.8.14", {\
+        "packageLocation": "./.yarn/__virtual__/react-range-virtual-5b9da61121/5/.yarn/berry/cache/react-range-npm-1.8.14-9ed0444700-10c0.zip/node_modules/react-range/",\
+        "packageDependencies": [\
+          ["react-range", "virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:1.8.14"],\
+          ["@types/react", "npm:18.3.3"],\
+          ["@types/react-dom", "npm:18.3.0"],\
+          ["react", "npm:18.3.1"],\
+          ["react-dom", "virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:18.3.1"]\
+        ],\
+        "packagePeers": [\
+          "@types/react-dom",\
+          "@types/react",\
+          "react-dom",\
+          "react"\
         ],\
         "linkType": "HARD"\
       }]\
@@ -4430,9 +4467,11 @@ const RAW_RUNTIME_STATE =
           ["eslint-plugin-react-hooks", "virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:4.6.2"],\
           ["eslint-plugin-react-refresh", "virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:0.4.7"],\
           ["js-cookie", "npm:3.0.5"],\
+          ["multi-range-slider-react", "npm:2.0.7"],\
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:18.3.1"],\
           ["react-multi-carousel", "npm:2.8.5"],\
+          ["react-range", "virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:1.8.14"],\
           ["react-router-dom", "virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:6.23.1"],\
           ["vite", "virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:5.2.13"]\
         ],\

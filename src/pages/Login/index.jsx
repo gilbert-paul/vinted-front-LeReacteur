@@ -21,7 +21,6 @@ const Login = ({ url, setModalIsVisible }) => {
   };
 
   const fetchData = async (newUser) => {
-    console.log(url);
     await axios
       .get(`${url}/user/login`, { params: newUser })
       .then(async (response) => {
@@ -30,7 +29,6 @@ const Login = ({ url, setModalIsVisible }) => {
         setModalIsVisible({ login: false, singup: false });
       })
       .catch((error) => {
-        console.log(error.response.data.message);
         setIsConnected({
           connected: false,
           message: error.response.data.message,

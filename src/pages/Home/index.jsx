@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Dropdown from "../../components/Dropdown";
 
-const Home = ({ url }) => {
+const Home = ({ url, allFilters }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [querys, setQuerys] = useState({ page: 1, limit: 20 });
   const [data, setData] = useState([]);
@@ -16,9 +16,10 @@ const Home = ({ url }) => {
   const [numberPages, setNumberPages] = useState([1]);
 
   useEffect(() => {
-    const fetchData = async (page, limit) => {
+    const fetchData = async (page, limit, allFilters) => {
+      const querysFilter = (`${allFilters.search && `title=${allFilters.search}&`}${`sort=${allFilters.trendPriceValue}&`}${allFilters.priceMin?`priceMin=${allFilters.priceMin}&`:""}${allFilters.priceMax?`priceMax=${allFilters.priceMax}&`:""}`);
       await axios
-        .get(`${url}/offers/?page=${page}&limit=${limit}`)
+        .get(`${url}/offers/?page=${page}&limit=${limit}&${querysFilter}`)
         .then((response) => {
           setData(response.data.data);
           setIsOffer(true);
@@ -36,8 +37,8 @@ const Home = ({ url }) => {
           setIsOffer(false);
         });
     };
-    fetchData(querys.page, querys.limit);
-  }, [querys]);
+    fetchData(querys.page, querys.limit, allFilters);
+  }, [querys, allFilters]);
 
   return (
     <>
