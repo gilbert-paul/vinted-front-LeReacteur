@@ -1,5 +1,6 @@
-const Modal = ({content, setModalIsVisible})=>{
+const Modal = ({content, setModalIsVisible, setTryToSell})=>{
   const handleModalVisibility =(event)=>{
+    setTryToSell(false)
 setModalIsVisible({login:false, signup:false})
   }
   return(

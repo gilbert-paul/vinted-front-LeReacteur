@@ -3,7 +3,7 @@ import axios from "axios";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
 
-const Login = ({ url, setModalIsVisible }) => {
+const Login = ({ url, setModalIsVisible, tryToSell }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isConnected, setIsConnected] = useState({
@@ -19,7 +19,6 @@ const Login = ({ url, setModalIsVisible }) => {
   const handlePassword = (event) => {
     setPassword(event.target.value);
   };
-
   const fetchData = async (newUser) => {
     await axios
       .get(`${url}/user/login`, { params: newUser })
@@ -27,6 +26,9 @@ const Login = ({ url, setModalIsVisible }) => {
         Cookies.set("token", response.data.data.token, { expires: 15 });
         setIsConnected({ connected: true, message: response.data.message });
         setModalIsVisible({ login: false, singup: false });
+        if(tryToSell){
+          navigate("/offer/publish")
+        }
       })
       .catch((error) => {
         setIsConnected({

@@ -8,6 +8,7 @@ import Login from "./pages/Login/index.jsx";
 import Footer from "./components/Footer";
 import Modal from "./components/Modal.jsx";
 import { useState } from "react";
+import Publish from "./pages/Publish/index.jsx";
 
 function App() {
   const urlBack = import.meta.env.VITE_APP_BACK_URL;
@@ -21,6 +22,8 @@ function App() {
     priceMin: minValue2,
     priceMax: maxValue2,
   });
+const [tryToSell, setTryToSell] = useState(false)
+
   const [modalIsVisible, setModalIsVisible] = useState({
     login: false,
     signup: false,
@@ -31,7 +34,6 @@ function App() {
   } else {
     document.body.style.overflowY = "initial";
   }
- 
   return (
     <Router>
       <Header
@@ -43,10 +45,18 @@ function App() {
         setMaxValue2={setMaxValue2}
         minValue2={minValue2}
         maxValue2={maxValue2}
-
+        tryToSell={tryToSell}
+        setTryToSell={setTryToSell}
       />
       <Routes>
         <Route path="/" element={<Home url={url} allFilters={allFilters} />} />
+        <Route path="/offer/publish" element={<Publish url={url}
+        modalIsVisible={modalIsVisible}
+        setModalIsVisible={setModalIsVisible} 
+        tryToSell={tryToSell}
+        setTryToSell={setTryToSell}
+        
+        />} />
         <Route path="/offer/:id" element={<Offer url={url} />} />
         <Route path="/user/signup" element={<Signup url={url} />} />
         <Route path="/user/login" element={<Login url={url} />} />
@@ -54,9 +64,10 @@ function App() {
       <Footer />
       {modalIsVisible.login && (
         <Modal
-          content={<Login url={url} setModalIsVisible={setModalIsVisible} />}
+          content={<Login url={url} setModalIsVisible={setModalIsVisible} tryToSell={tryToSell}/>}
           modalIsVisible={modalIsVisible}
           setModalIsVisible={setModalIsVisible}
+          setTryToSell={setTryToSell}          
         />
       )}
       {modalIsVisible.signup && (
@@ -64,6 +75,8 @@ function App() {
           content={<Signup setModalIsVisible={setModalIsVisible} url={url} />}
           modalIsVisible={modalIsVisible}
           setModalIsVisible={setModalIsVisible}
+          setTryToSell={setTryToSell}          
+
         />
       )}
     </Router>

@@ -39,6 +39,7 @@ const RAW_RUNTIME_STATE =
           ["multi-range-slider-react", "npm:2.0.7"],\
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:18.3.1"],\
+          ["react-dropzone", "virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:14.2.3"],\
           ["react-multi-carousel", "npm:2.8.5"],\
           ["react-range", "virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:1.8.14"],\
           ["react-router-dom", "virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:6.23.1"],\
@@ -1329,6 +1330,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["attr-accept", [\
+      ["npm:2.2.2", {\
+        "packageLocation": "../../../../.yarn/berry/cache/attr-accept-npm-2.2.2-b9cd0d8eac-10c0.zip/node_modules/attr-accept/",\
+        "packageDependencies": [\
+          ["attr-accept", "npm:2.2.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["available-typed-arrays", [\
       ["npm:1.0.7", {\
         "packageLocation": "../../../../.yarn/berry/cache/available-typed-arrays-npm-1.0.7-e5e5d79687-10c0.zip/node_modules/available-typed-arrays/",\
@@ -2199,6 +2209,16 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["file-entry-cache", "npm:6.0.1"],\
           ["flat-cache", "npm:3.2.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["file-selector", [\
+      ["npm:0.6.0", {\
+        "packageLocation": "../../../../.yarn/berry/cache/file-selector-npm-0.6.0-04259af1f7-10c0.zip/node_modules/file-selector/",\
+        "packageDependencies": [\
+          ["file-selector", "npm:0.6.0"],\
+          ["tslib", "npm:2.6.3"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -3736,6 +3756,31 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["react-dropzone", [\
+      ["npm:14.2.3", {\
+        "packageLocation": "../../../../.yarn/berry/cache/react-dropzone-npm-14.2.3-b5d5b11ea4-10c0.zip/node_modules/react-dropzone/",\
+        "packageDependencies": [\
+          ["react-dropzone", "npm:14.2.3"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:14.2.3", {\
+        "packageLocation": "./.yarn/__virtual__/react-dropzone-virtual-feabb59559/5/.yarn/berry/cache/react-dropzone-npm-14.2.3-b5d5b11ea4-10c0.zip/node_modules/react-dropzone/",\
+        "packageDependencies": [\
+          ["react-dropzone", "virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:14.2.3"],\
+          ["@types/react", "npm:18.3.3"],\
+          ["attr-accept", "npm:2.2.2"],\
+          ["file-selector", "npm:0.6.0"],\
+          ["prop-types", "npm:15.8.1"],\
+          ["react", "npm:18.3.1"]\
+        ],\
+        "packagePeers": [\
+          "@types/react",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["react-is", [\
       ["npm:16.13.1", {\
         "packageLocation": "../../../../.yarn/berry/cache/react-is-npm-16.13.1-a9b9382b4f-10c0.zip/node_modules/react-is/",\
@@ -4311,6 +4356,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["tslib", [\
+      ["npm:2.6.3", {\
+        "packageLocation": "../../../../.yarn/berry/cache/tslib-npm-2.6.3-0fd136b3be-10c0.zip/node_modules/tslib/",\
+        "packageDependencies": [\
+          ["tslib", "npm:2.6.3"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["type-check", [\
       ["npm:0.4.0", {\
         "packageLocation": "../../../../.yarn/berry/cache/type-check-npm-0.4.0-60565800ce-10c0.zip/node_modules/type-check/",\
@@ -4470,6 +4524,7 @@ const RAW_RUNTIME_STATE =
           ["multi-range-slider-react", "npm:2.0.7"],\
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:18.3.1"],\
+          ["react-dropzone", "virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:14.2.3"],\
           ["react-multi-carousel", "npm:2.8.5"],\
           ["react-range", "virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:1.8.14"],\
           ["react-router-dom", "virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:6.23.1"],\

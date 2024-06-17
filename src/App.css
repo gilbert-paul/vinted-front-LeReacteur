@@ -2,6 +2,7 @@
 @import url(./pages/Offer/offer.css);
 @import url(./pages/Signup/signup.css);
 @import url(./pages/Login/login.css);
+@import url(./pages/Publish/publish.css);
 
 
 :root {
@@ -310,6 +311,9 @@ content:' €'
   border-radius:20px;
   background-color: var(--primary-color);
   flex-shrink:0;
+}
+.__wraper:hover{
+cursor:pointer
 }
 .__false-box{
   height:20px;

@@ -16,6 +16,8 @@ const Header = ({
   setMaxValue2,
   minValue2,
   maxValue2,
+  tryToSell,
+  setTryToSell
 }) => {
   const [hideFilters, setHideFilters] = useState(false);
 
@@ -32,7 +34,7 @@ const Header = ({
     setAllFilters({ ...allFilters, search: event.target.value });
   };
 
-  const [boxIsChecked, setBoxIsChecked] = useState(true);
+  const [boxIsChecked, setBoxIsChecked] = useState(false);
   const handleFalseBox = () => {
     setBoxIsChecked(!boxIsChecked);
     if (boxIsChecked) {
@@ -79,7 +81,7 @@ const Header = ({
                         boxIsChecked ? "__false-box active" : "__false-box"
                       }
                     >
-                      <i class="fa-solid fa-arrow-up-right-dots"></i>{" "}
+                      <i className="fa-solid fa-arrow-up-right-dots"></i>{" "}
                     </div>
                   </div>
                 </div>
@@ -142,12 +144,14 @@ const Header = ({
             <Button
               className="primary-btn"
               title="Se déconnecter"
-              disconnected={true}
+              disconnected={{connected:true, setTryToSell:setTryToSell}}
             />
           )}
         </article>
         <article className="__sell-area">
-          <Button className="primary-btn" title={"Vends tes articles"} />
+          <Link to="/offer/publish">
+          <Button className="primary-btn" title={"Vends tes articles"} /> 
+          </Link>
         </article>
       </div>
     </header>

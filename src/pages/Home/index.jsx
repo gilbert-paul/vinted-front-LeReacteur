@@ -52,8 +52,10 @@ const Home = ({ url, allFilters }) => {
             </div>
             <div className="__sell">
               <h2>Prêt à faire du tri dans vos placards ?</h2>
-              <button className="primary-btn">Commencer à vendre</button>
+          <Link to="/offer/publish">
 
+              <button className="primary-btn">Commencer à vendre</button>
+</Link>
             </div>
           </div>
           <section className="container __pagination">
