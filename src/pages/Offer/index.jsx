@@ -121,7 +121,7 @@ const Offer = ({ url }) => {
                     <p>{dataOffer.owner.account.username}</p>
                   </div>
                   <hr />
-                  {tokenOwner === Cookies.get("token") && buyer.isBought && (
+                  {tokenOwner === Cookies.get("token") && buyer.isBought ? (
                     <>
                       <div className="__buyer">
                         <p>Acheté par : </p>
@@ -134,18 +134,18 @@ const Offer = ({ url }) => {
                         </div>
                       </div>
                     </>
+                  ) : (
+                    <div className="__buyer">
+                      <p>Produit déja vendu...</p>
+                    </div>
                   )}
-                  {!buyer.isBought ? (
+                  {!buyer.isBought && (
                     <Link
                       to={Cookies.get("token") ? "/payments" : "/"}
                       state={dataOffer}
                     >
                       <Button title="Acheter" className="primary-btn" />
                     </Link>
-                  ) : (
-                    <>
-                      <p>Produit déja vendu...</p>
-                    </>
                   )}
                 </div>
               </section>

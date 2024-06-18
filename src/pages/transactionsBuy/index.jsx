@@ -40,18 +40,26 @@ const TransactionBuy = ({ url }) => {
               {data.data.sellTransactions.map((sellTransaction) => {
                 return (
                   <tr key={sellTransaction.offer._id}>
-                    <Link to={`/offer/${sellTransaction.offer._id}`}>
-                      <td>{sellTransaction.seller.account.username}</td>
-                    </Link>
-                    <Link to={`/offer/${sellTransaction.offer._id}`}>
-                      <td>{sellTransaction.offer.product_name}</td>
-                    </Link>
-                    <Link to={`/offer/${sellTransaction.offer._id}`}>
-                      <td>{sellTransaction.offer.product_price} €</td>
-                    </Link>
-                    <Link to={`/offer/${sellTransaction.offer._id}`}>
-                      <td>{sellTransaction.date}</td>
-                    </Link>
+                    <td>
+                      <Link to={`/offer/${sellTransaction.offer._id}`}>
+                        {sellTransaction.seller.account.username}
+                      </Link>
+                    </td>
+                    <td>
+                      <Link to={`/offer/${sellTransaction.offer._id}`}>
+                        {sellTransaction.offer.product_name}
+                      </Link>
+                    </td>
+                    <td>
+                      <Link to={`/offer/${sellTransaction.offer._id}`}>
+                        {sellTransaction.offer.product_price} €
+                      </Link>
+                    </td>
+                    <td>
+                      <Link to={`/offer/${sellTransaction.offer._id}`}>
+                        {sellTransaction.date}
+                      </Link>
+                    </td>
                   </tr>
                 );
               })}
