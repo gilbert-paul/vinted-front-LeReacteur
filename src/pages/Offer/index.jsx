@@ -44,13 +44,8 @@ const Offer = ({ url }) => {
           setDataOffer(response.data.data);
           setIsOffer(true);
           setTokenOwner(response.data.owner);
-          console.log(response.data);
           setBuyer(response.data.buyer);
-          if (tokenOwner !== Cookies.get("token") && buyer.isBought) {
-            setTimeout(() => {
-              navigate("/");
-            }, 1000);
-          }
+          
         })
         .catch((error) => {
           setDataOffer([error.response.data.message]);
@@ -68,9 +63,12 @@ const Offer = ({ url }) => {
       navigate("/");
     };
     const timeOut = await setTimeout(navig, 2000);
-    console.log(timeOut);
   };
-
+  if (tokenOwner !== Cookies.get("token") && buyer.isBought) {
+    setTimeout(() => {
+      navigate("/");
+    }, 2000);
+  }
   return (
     <>
       {isLoading ? (

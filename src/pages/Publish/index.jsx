@@ -138,8 +138,6 @@ const Add = ({
           <div className="__moreImage">
             <Dropzone
               onDrop={(acceptedFiles) => {
-                console.log(acceptedFiles);
-
                 setFile([...file, ...Array.from(acceptedFiles)]);
               }}
             >

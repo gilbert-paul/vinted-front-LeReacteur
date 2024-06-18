@@ -59,7 +59,6 @@ const Signup = ({ url, setModalIsVisible }) => {
       password: password,
       newsletter: `${newsletter}`,
     });
-    console.log(avatar);
     if (avatar.length > 1) {
       fetchData({
         username: username,

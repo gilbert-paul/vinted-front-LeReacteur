@@ -37,7 +37,6 @@ const CheckoutForm = ({ url, completed, setCompleted }) => {
     });
 
     const clientSecret = response.data.paymentIntent.client_secret;
-    console.log(response);
     const stripeResponse = await stripe.confirmPayment({
       elements,
       clientSecret,
