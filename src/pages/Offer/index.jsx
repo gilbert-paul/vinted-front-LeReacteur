@@ -48,8 +48,8 @@ const Offer = ({ url }) => {
           setBuyer(response.data.buyer);
           if (tokenOwner !== Cookies.get("token") && buyer.isBought) {
             setTimeout(() => {
-              navigate("/"), 1000;
-            });
+              navigate("/");
+            }, 1000);
           }
         })
         .catch((error) => {
