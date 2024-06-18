@@ -1,0 +1,23 @@
+.container.transactions {
+  padding-top: 40px;
+}
+
+.transactions table {
+  width: 100%;
+  border: 2px solid var(--third-color);
+  border-collapse: collapse
+}
+
+.transactions thead {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+
+.transactions td,
+.transactions th {
+  border: 2px solid var(--third-color);
+  padding: 5px;
+  text-align: left;
+
+}

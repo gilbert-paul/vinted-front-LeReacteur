@@ -1,0 +1,61 @@
+.payments {
+  padding: 40Px;
+  background-color: var(--fourth-color);
+}
+
+.payments .container {
+  background-color: var(--secondary-color);
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.__informations,
+.__total {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: solid 1px var(--fourth-color)
+}
+
+.payments .container div h3 {
+  color: var(--third-color)
+}
+
+.payments .container div div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.payments .container div div span:first-of-type {
+
+  font-weight: bold;
+}
+
+.__validation {
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.__validation span {
+  font-weight: bold;
+}
+
+.payments form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.payments form button {
+  text-align: center;
+}
+
+.__accepted {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}

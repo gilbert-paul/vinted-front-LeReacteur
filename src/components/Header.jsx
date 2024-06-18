@@ -17,7 +17,7 @@ const Header = ({
   minValue2,
   maxValue2,
   tryToSell,
-  setTryToSell
+  setTryToSell,
 }) => {
   const [hideFilters, setHideFilters] = useState(false);
 
@@ -144,14 +144,40 @@ const Header = ({
             <Button
               className="primary-btn"
               title="Se déconnecter"
-              disconnected={{connected:true, setTryToSell:setTryToSell}}
+              disconnected={{ connected: true, setTryToSell: setTryToSell }}
             />
           )}
         </article>
         <article className="__sell-area">
           <Link to="/offer/publish">
-          <Button className="primary-btn" title={"Vends tes articles"} /> 
+            <Button className="primary-btn" title={"Vends tes articles"} />
           </Link>
+          {Cookies.get("token") ? (
+            <Link to="/transactions/buy">
+              <Button className="secondary-btn" title={"Tes achats"} />
+            </Link>
+          ) : (
+            <Button
+              className="secondary-btn"
+              title="Tes achats"
+              modalIsVisible={modalIsVisible}
+              setModalIsVisible={setModalIsVisible}
+              modal="login"
+            />
+          )}
+          {Cookies.get("token") ? (
+            <Link to="/transactions/sell">
+              <Button className="secondary-btn" title={"Tes ventes"} />
+            </Link>
+          ) : (
+            <Button
+              className="secondary-btn"
+              title="Tes ventes"
+              modalIsVisible={modalIsVisible}
+              setModalIsVisible={setModalIsVisible}
+              modal="login"
+            />
+          )}
         </article>
       </div>
     </header>

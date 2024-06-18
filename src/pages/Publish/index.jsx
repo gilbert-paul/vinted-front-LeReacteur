@@ -47,11 +47,12 @@ const Add = ({
           "Content-Type": "multipart/form-data",
         },
       })
-      .then(async(response) => {
+      .then(async (response) => {
         setResult(response.data);
-        const home = ()=>{navigate("/")}
-        setTimeout(home, 2000)
-
+        const home = () => {
+          navigate(`/offer/${response.data.data._id}`);
+        };
+        setTimeout(home, 2000);
       })
       .catch((error) => {
         setError(error.response.data);
@@ -85,7 +86,6 @@ const Add = ({
     setChange(!change);
   };
   const handlePicture = (event) => {
-    console.log("patate")
     setFile([...file, ...Array.from(event.target.files)]);
   };
   const handleSubmit = (event) => {
@@ -115,17 +115,18 @@ const Add = ({
                     <img alt="img" src={URL.createObjectURL(image)} />
                     <i
                       onClick={() => {
-                        {file.length!==0}{
-
-                        const allFiles = [...file]
-                        {file.length>1?
-                        allFiles.splice(file.indexOf(image),1)
-                      :
-                      allFiles.pop()
-                    }
-                    setFile(allFiles)
-                      }
-
+                        {
+                          file.length !== 0;
+                        }
+                        {
+                          const allFiles = [...file];
+                          {
+                            file.length > 1
+                              ? allFiles.splice(file.indexOf(image), 1)
+                              : allFiles.pop();
+                          }
+                          setFile(allFiles);
+                        }
                       }}
                       className="fa-regular fa-circle-xmark"
                     ></i>
@@ -135,23 +136,23 @@ const Add = ({
             </div>
           )}
           <div className="__moreImage">
-            <Dropzone onDrop={(acceptedFiles) => {
-              console.log(acceptedFiles)
-              
-              setFile([...file, ...Array.from(acceptedFiles)])
-              }}>
+            <Dropzone
+              onDrop={(acceptedFiles) => {
+                console.log(acceptedFiles);
+
+                setFile([...file, ...Array.from(acceptedFiles)]);
+              }}
+            >
               {({ getRootProps, getInputProps }) => (
-                    <section>
-                    <div {...getRootProps()}>
-                      <input {...getInputProps()} />
-                       <button type="button" className="secondary-btn">
+                <section>
+                  <div {...getRootProps()}>
+                    <input {...getInputProps()} />
+                    <button type="button" className="secondary-btn">
                       <i className="fa-solid fa-plus"></i>
                       <p>Ajouter une image</p>
-                    </button> 
-                    </div>
-                  </section>
-
-
+                    </button>
+                  </div>
+                </section>
               )}
             </Dropzone>
           </div>
@@ -242,17 +243,17 @@ const Add = ({
             setValue={setChange}
           />
         </section>
-      {result.message ? (
-        <>
-          <div className="__answer __success">{result.message}</div>
-        </>
-      ) : (
-        <>
-        {error.message &&
-        <div className="__answer __alert">{error.message}</div>
-        }
-      </>)
-      }
+        {result.message ? (
+          <>
+            <div className="__answer __success">{result.message}</div>
+          </>
+        ) : (
+          <>
+            {error.message && (
+              <div className="__answer __alert">{error.message}</div>
+            )}
+          </>
+        )}
         <button type="submit" className="primary-btn">
           Ajouter
         </button>

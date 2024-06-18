@@ -6,11 +6,12 @@ import Button from "../../components/Button";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 
 const Offer = ({ url }) => {
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
       items: 2,
     },
@@ -31,6 +32,9 @@ const Offer = ({ url }) => {
   const [dataOffer, setDataOffer] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [isOffer, setIsOffer] = useState(false);
+  const [tokenOwner, setTokenOwner] = useState("");
+  const [buyer, setBuyer] = useState({});
+
   const { id } = useParams();
   useEffect(() => {
     const fetchData = async () => {
@@ -39,15 +43,30 @@ const Offer = ({ url }) => {
         .then((response) => {
           setDataOffer(response.data.data);
           setIsOffer(true);
+          setTokenOwner(response.data.owner);
+          console.log(response.data);
+          setBuyer(response.data.buyer);
         })
         .catch((error) => {
           setDataOffer([error.response.data.message]);
           setIsOffer(false);
         });
+
       setIsLoading(false);
+      if (tokenOwner !== Cookies.get("token") && buyer.isBought) {
+        redirected();
+      }
     };
     fetchData();
   }, [id]);
+  const navigate = useNavigate();
+  const redirected = async () => {
+    const navig = () => {
+      navigate("/");
+    };
+    const timeOut = await setTimeout(navig, 2000);
+    console.log(timeOut);
+  };
 
   return (
     <>
@@ -67,7 +86,7 @@ const Offer = ({ url }) => {
                         <Carousel responsive={responsive}>
                           {dataOffer.product_pictures.map((picture) => {
                             if (dataOffer.product_pictures.length === 1) {
-                              return <></>;
+                              return;
                             } else {
                               return (
                                 <div key={picture} className="__carousel">
@@ -102,9 +121,32 @@ const Offer = ({ url }) => {
                     <p>{dataOffer.owner.account.username}</p>
                   </div>
                   <hr />
-                  <Link to="/">
-                    <Button title="Acheter" className="primary-btn" />
-                  </Link>
+                  {tokenOwner === Cookies.get("token") && buyer.isBought && (
+                    <>
+                      <div className="__buyer">
+                        <p>Acheté par : </p>
+                        <div>
+                          <img
+                            src={buyer.buyer.account.avatar.secure_url}
+                            alt="Avatar Picture"
+                          />
+                          <p>{buyer.buyer.account.username}</p>
+                        </div>
+                      </div>
+                    </>
+                  )}
+                  {!buyer.isBought ? (
+                    <Link
+                      to={Cookies.get("token") ? "/payments" : "/"}
+                      state={dataOffer}
+                    >
+                      <Button title="Acheter" className="primary-btn" />
+                    </Link>
+                  ) : (
+                    <>
+                      <p>Produit déja vendu...</p>
+                    </>
+                  )}
                 </div>
               </section>
             </div>

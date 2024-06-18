@@ -53,20 +53,30 @@ const Signup = ({ url, setModalIsVisible }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
     setNewUser({
       username: username,
       email: email,
       password: password,
       newsletter: `${newsletter}`,
     });
-    fetchData({
-      username: username,
-      email: email,
-      password: password,
-      newsletter: `${newsletter}`,
-      avatar: avatar[1][0] || null,
-    });
+    console.log(avatar);
+    if (avatar.length > 1) {
+      fetchData({
+        username: username,
+        email: email,
+        password: password,
+        newsletter: `${newsletter}`,
+        avatar: avatar[1][0],
+      });
+    } else {
+      fetchData({
+        username: username,
+        email: email,
+        password: password,
+        newsletter: `${newsletter}`,
+        avatar: [{}],
+      });
+    }
   };
   return (
     <>
@@ -97,9 +107,7 @@ const Signup = ({ url, setModalIsVisible }) => {
             />
             <Dropzone
               onDrop={(acceptedFiles) => {
-                console.log(acceptedFiles);
-
-                setAvatar([0,acceptedFiles]);
+                setAvatar([0, acceptedFiles]);
               }}
             >
               {({ getRootProps, getInputProps }) => (
@@ -118,14 +126,14 @@ const Signup = ({ url, setModalIsVisible }) => {
               <div className="__avatar">
                 <i
                   onClick={(elem) => {
-                    elem?.stopPropagation()
+                    elem?.stopPropagation();
                     const allAvatar = [...avatar];
                     allAvatar.pop();
                     setAvatar(allAvatar);
-                    }}
+                  }}
                   className="fa-regular fa-circle-xmark"
                 ></i>
-                  <img alt="img" src={URL.createObjectURL(avatar[1][0])} />
+                <img alt="img" src={URL.createObjectURL(avatar[1][0])} />
               </div>
             )}
 

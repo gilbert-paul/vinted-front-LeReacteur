@@ -17,17 +17,20 @@ const Home = ({ url, allFilters }) => {
 
   useEffect(() => {
     const fetchData = async (page, limit, allFilters) => {
-      const querysFilter = (`${allFilters.search && `title=${allFilters.search}&`}${`sort=${allFilters.trendPriceValue}&`}${allFilters.priceMin?`priceMin=${allFilters.priceMin}&`:""}${allFilters.priceMax?`priceMax=${allFilters.priceMax}&`:""}`);
+      const querysFilter = `${
+        allFilters.search && `title=${allFilters.search}&`
+      }${`sort=${allFilters.trendPriceValue}&`}${
+        allFilters.priceMin ? `priceMin=${allFilters.priceMin}&` : ""
+      }${allFilters.priceMax ? `priceMax=${allFilters.priceMax}&` : ""}`;
       await axios
         .get(`${url}/offers/?page=${page}&limit=${limit}&${querysFilter}`)
         .then((response) => {
           setData(response.data.data);
           setIsOffer(true);
-          
-          const numberOfPages = [1];
-          for (let i = 1; i < (Math.ceil(data.count / querys.limit)); i++) {
-            numberOfPages.push(i + 1);
 
+          const numberOfPages = [1];
+          for (let i = 1; i < Math.ceil(data.count / querys.limit); i++) {
+            numberOfPages.push(i + 1);
           }
           setNumberPages(numberOfPages);
           setIsLoading(false);
@@ -52,23 +55,32 @@ const Home = ({ url, allFilters }) => {
             </div>
             <div className="__sell">
               <h2>Prêt à faire du tri dans vos placards ?</h2>
-          <Link to="/offer/publish">
-
-              <button className="primary-btn">Commencer à vendre</button>
-</Link>
+              <Link to="/offer/publish">
+                <button className="primary-btn">Commencer à vendre</button>
+              </Link>
             </div>
           </div>
           <section className="container __pagination">
             <div>
- 
-                <Dropdown title='Page' values={{
-                  page:numberPages,
-                  limit:querys.limit}} setData={setQuerys} data={querys}/>
-                  <Dropdown title='Articles par page' values={{
-                  page:[1],
-                  limit:[5,10,20,30]}} setData={setQuerys} limit={true} data={querys}/>
-
-                
+              <Dropdown
+                title="Page"
+                values={{
+                  page: numberPages,
+                  limit: querys.limit,
+                }}
+                setData={setQuerys}
+                data={querys}
+              />
+              <Dropdown
+                title="Articles par page"
+                values={{
+                  page: [1],
+                  limit: [5, 10, 20, 30],
+                }}
+                setData={setQuerys}
+                limit={true}
+                data={querys}
+              />
             </div>
           </section>
           <section className="container">

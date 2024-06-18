@@ -152,20 +152,24 @@ select {
 
 @media screen and (max-width:768px) {
 
-  section.container{
-    padding-left:20px;
+  section.container {
+    padding-left: 20px;
     padding-right: 20px;
   }
+
   section.container a {
     width: calc(100% / 1)
   }
-  .hero .__sell{
+
+  .hero .__sell {
     display: none;
   }
-  .hero{
-    height:100px;
+
+  .hero {
+    height: 100px;
   }
-  article.__offer-card .__article-card .__image{
-    height:300px;
+
+  article.__offer-card .__article-card .__image {
+    height: 300px;
   }
 }

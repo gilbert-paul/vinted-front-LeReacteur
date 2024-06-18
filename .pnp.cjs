@@ -27,6 +27,8 @@ const RAW_RUNTIME_STATE =
       [null, {\
         "packageLocation": "./",\
         "packageDependencies": [\
+          ["@stripe/react-stripe-js", "virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:2.7.1"],\
+          ["@stripe/stripe-js", "npm:4.0.0"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["@vitejs/plugin-react", "virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:4.3.1"],\
@@ -962,6 +964,46 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/unplugged/@rollup-rollup-win32-x64-msvc-npm-4.18.0-96494796f0/node_modules/@rollup/rollup-win32-x64-msvc/",\
         "packageDependencies": [\
           ["@rollup/rollup-win32-x64-msvc", "npm:4.18.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@stripe/react-stripe-js", [\
+      ["npm:2.7.1", {\
+        "packageLocation": "../../../../.yarn/berry/cache/@stripe-react-stripe-js-npm-2.7.1-ba3ee51600-10c0.zip/node_modules/@stripe/react-stripe-js/",\
+        "packageDependencies": [\
+          ["@stripe/react-stripe-js", "npm:2.7.1"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:2.7.1", {\
+        "packageLocation": "./.yarn/__virtual__/@stripe-react-stripe-js-virtual-958c9d0bed/5/.yarn/berry/cache/@stripe-react-stripe-js-npm-2.7.1-ba3ee51600-10c0.zip/node_modules/@stripe/react-stripe-js/",\
+        "packageDependencies": [\
+          ["@stripe/react-stripe-js", "virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:2.7.1"],\
+          ["@stripe/stripe-js", "npm:4.0.0"],\
+          ["@types/react", "npm:18.3.3"],\
+          ["@types/react-dom", "npm:18.3.0"],\
+          ["@types/stripe__stripe-js", null],\
+          ["prop-types", "npm:15.8.1"],\
+          ["react", "npm:18.3.1"],\
+          ["react-dom", "virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:18.3.1"]\
+        ],\
+        "packagePeers": [\
+          "@stripe/stripe-js",\
+          "@types/react-dom",\
+          "@types/react",\
+          "@types/stripe__stripe-js",\
+          "react-dom",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@stripe/stripe-js", [\
+      ["npm:4.0.0", {\
+        "packageLocation": "../../../../.yarn/berry/cache/@stripe-stripe-js-npm-4.0.0-a8aed30528-10c0.zip/node_modules/@stripe/stripe-js/",\
+        "packageDependencies": [\
+          ["@stripe/stripe-js", "npm:4.0.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -4512,6 +4554,8 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./",\
         "packageDependencies": [\
           ["vinted-frontend", "workspace:."],\
+          ["@stripe/react-stripe-js", "virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:2.7.1"],\
+          ["@stripe/stripe-js", "npm:4.0.0"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["@vitejs/plugin-react", "virtual:a62c5e2287165f5c958f885610f3f87d4a8fe15777908405ae8e4c07eccddb44ce5070085da8cfbdda8c5acc89e125ea61d86277b2964f8b4c2a4e5edaddff3f#npm:4.3.1"],\

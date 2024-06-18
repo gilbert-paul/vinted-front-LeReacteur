@@ -9,6 +9,9 @@ import Footer from "./components/Footer";
 import Modal from "./components/Modal.jsx";
 import { useState } from "react";
 import Publish from "./pages/Publish/index.jsx";
+import Payments from "./pages/Payments/index.jsx";
+import TransactionSell from "./pages/transactionsSell/index.jsx";
+import TransactionBuy from "./pages/transactionsBuy/index.jsx";
 
 function App() {
   const urlBack = import.meta.env.VITE_APP_BACK_URL;
@@ -22,7 +25,7 @@ function App() {
     priceMin: minValue2,
     priceMax: maxValue2,
   });
-const [tryToSell, setTryToSell] = useState(false)
+  const [tryToSell, setTryToSell] = useState(false);
 
   const [modalIsVisible, setModalIsVisible] = useState({
     login: false,
@@ -50,24 +53,41 @@ const [tryToSell, setTryToSell] = useState(false)
       />
       <Routes>
         <Route path="/" element={<Home url={url} allFilters={allFilters} />} />
-        <Route path="/offer/publish" element={<Publish url={url}
-        modalIsVisible={modalIsVisible}
-        setModalIsVisible={setModalIsVisible} 
-        tryToSell={tryToSell}
-        setTryToSell={setTryToSell}
-        
-        />} />
+        <Route
+          path="/offer/publish"
+          element={
+            <Publish
+              url={url}
+              modalIsVisible={modalIsVisible}
+              setModalIsVisible={setModalIsVisible}
+              tryToSell={tryToSell}
+              setTryToSell={setTryToSell}
+            />
+          }
+        />
         <Route path="/offer/:id" element={<Offer url={url} />} />
         <Route path="/user/signup" element={<Signup url={url} />} />
         <Route path="/user/login" element={<Login url={url} />} />
+        <Route path="/payments" element={<Payments url={url} />} />
+        <Route
+          path="transactions/sell"
+          element={<TransactionSell url={url} />}
+        />
+        <Route path="transactions/buy" element={<TransactionBuy url={url} />} />
       </Routes>
       <Footer />
       {modalIsVisible.login && (
         <Modal
-          content={<Login url={url} setModalIsVisible={setModalIsVisible} tryToSell={tryToSell}/>}
+          content={
+            <Login
+              url={url}
+              setModalIsVisible={setModalIsVisible}
+              tryToSell={tryToSell}
+            />
+          }
           modalIsVisible={modalIsVisible}
           setModalIsVisible={setModalIsVisible}
-          setTryToSell={setTryToSell}          
+          setTryToSell={setTryToSell}
         />
       )}
       {modalIsVisible.signup && (
@@ -75,8 +95,7 @@ const [tryToSell, setTryToSell] = useState(false)
           content={<Signup setModalIsVisible={setModalIsVisible} url={url} />}
           modalIsVisible={modalIsVisible}
           setModalIsVisible={setModalIsVisible}
-          setTryToSell={setTryToSell}          
-
+          setTryToSell={setTryToSell}
         />
       )}
     </Router>

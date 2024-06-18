@@ -732,6 +732,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@stripe/react-stripe-js@npm:^2.7.1":
+  version: 2.7.1
+  resolution: "@stripe/react-stripe-js@npm:2.7.1"
+  dependencies:
+    prop-types: "npm:^15.7.2"
+  peerDependencies:
+    "@stripe/stripe-js": ^1.44.1 || ^2.0.0 || ^3.0.0
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: 10c0/bd88da4ed1d201e8f69f0cda2345269eed2a487c98b55f0472ec8a34a7afd5082d246677179e296dc2aa265fc129912b3b46b65bc8b3932d8123b19f3ef7227d
+  languageName: node
+  linkType: hard
+
+"@stripe/stripe-js@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "@stripe/stripe-js@npm:4.0.0"
+  checksum: 10c0/c4cc6a2d1a3a3e20a6ba37b3d2e837678b52146ee611b5ce2edcc9df9df5d061e885fe14f19aece77db6576071839068f24cd7a7f6d56ae125a6bdf59c4d94b5
+  languageName: node
+  linkType: hard
+
 "@types/babel__core@npm:^7.20.5":
   version: 7.20.5
   resolution: "@types/babel__core@npm:7.20.5"
@@ -3151,7 +3171,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.8.1":
+"prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
   version: 15.8.1
   resolution: "prop-types@npm:15.8.1"
   dependencies:
@@ -3884,6 +3904,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "vinted-frontend@workspace:."
   dependencies:
+    "@stripe/react-stripe-js": "npm:^2.7.1"
+    "@stripe/stripe-js": "npm:^4.0.0"
     "@types/react": "npm:^18.2.66"
     "@types/react-dom": "npm:^18.2.22"
     "@vitejs/plugin-react": "npm:^4.2.1"

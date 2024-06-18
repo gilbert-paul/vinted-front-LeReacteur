@@ -26,9 +26,8 @@ const Login = ({ url, setModalIsVisible, tryToSell }) => {
         Cookies.set("token", response.data.data.token, { expires: 15 });
         setIsConnected({ connected: true, message: response.data.message });
         setModalIsVisible({ login: false, singup: false });
-if(tryToSell){
-          navigate("/offer/publish")
-         
+        if (tryToSell) {
+          navigate("/offer/publish");
         }
       })
       .catch((error) => {

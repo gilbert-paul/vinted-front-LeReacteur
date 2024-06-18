@@ -1,11 +1,9 @@
-const Main = ()=>{
+const Main = () => {
   return (
     <main>
-      <div className="container">
-
-      </div>
+      <div className="container"></div>
     </main>
-  )
-}
+  );
+};
 
-export default Main
+export default Main;
