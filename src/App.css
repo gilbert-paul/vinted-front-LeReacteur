@@ -261,7 +261,7 @@ button.react-multiple-carousel__arrow.react-multiple-carousel__arrow--left {
   margin:40px;
 }
 
-.container-modal i {
+.container-modal >div >i {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -335,6 +335,8 @@ transform:translateX(100%)
 .__false-box.active i{
   transform:rotateZ(90deg)
 }
+
+
 
 
 @media screen and (max-width:1280px) {

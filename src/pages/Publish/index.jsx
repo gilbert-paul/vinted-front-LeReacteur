@@ -47,8 +47,11 @@ const Add = ({
           "Content-Type": "multipart/form-data",
         },
       })
-      .then((response) => {
+      .then(async(response) => {
         setResult(response.data);
+        const home = ()=>{navigate("/")}
+        setTimeout(home, 2000)
+
       })
       .catch((error) => {
         setError(error.response.data);
@@ -89,7 +92,6 @@ const Add = ({
     event.preventDefault();
 
     fetchData(url);
-    navigate("/")
   };
   useEffect(() => {
     if (!Cookies.get("token")) {
@@ -240,17 +242,21 @@ const Add = ({
             setValue={setChange}
           />
         </section>
+      {result.message ? (
+        <>
+          <div className="__answer __success">{result.message}</div>
+        </>
+      ) : (
+        <>
+        {error.message &&
+        <div className="__answer __alert">{error.message}</div>
+        }
+      </>)
+      }
         <button type="submit" className="primary-btn">
           Ajouter
         </button>
       </form>
-      {result.message ? (
-        <>
-          <h1>{result.message}</h1>
-        </>
-      ) : (
-        <h1>{error.message}</h1>
-      )}
     </main>
   );
 };

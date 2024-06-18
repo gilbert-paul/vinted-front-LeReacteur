@@ -73,7 +73,7 @@ const Home = ({ url, allFilters }) => {
           </section>
           <section className="container">
             {!isOffer ? (
-              <div className="__alert-info">
+              <div className="__answer __alert">
                 <h2>{data[0]}</h2>
               </div>
             ) : (

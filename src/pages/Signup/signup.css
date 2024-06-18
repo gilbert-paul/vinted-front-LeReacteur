@@ -64,6 +64,7 @@ cursor:pointer;
   margin-bottom:10px;
   border-radius:5px;
   border:solid 1px black;
+  margin:0 auto
 }
 
 .__answer.__success{
