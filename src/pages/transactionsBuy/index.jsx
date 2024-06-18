@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
 import Loading from "../../components/Loading";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 const TransactionBuy = ({ url }) => {
   const [data, setData] = useState({});
@@ -39,11 +40,18 @@ const TransactionBuy = ({ url }) => {
               {data.data.sellTransactions.map((sellTransaction) => {
                 return (
                   <tr key={sellTransaction.offer._id}>
-                    <td>{sellTransaction.seller.account.username}</td>
-                    <td>{sellTransaction.offer.product_name}</td>
-                    <td>{sellTransaction.offer.product_price} €</td>
-
-                    <td>{sellTransaction.date}</td>
+                    <Link to={`/offer/${sellTransaction.offer._id}`}>
+                      <td>{sellTransaction.seller.account.username}</td>
+                    </Link>
+                    <Link to={`/offer/${sellTransaction.offer._id}`}>
+                      <td>{sellTransaction.offer.product_name}</td>
+                    </Link>
+                    <Link to={`/offer/${sellTransaction.offer._id}`}>
+                      <td>{sellTransaction.offer.product_price} €</td>
+                    </Link>
+                    <Link to={`/offer/${sellTransaction.offer._id}`}>
+                      <td>{sellTransaction.date}</td>
+                    </Link>
                   </tr>
                 );
               })}
