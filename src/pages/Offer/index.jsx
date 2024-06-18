@@ -45,7 +45,6 @@ const Offer = ({ url }) => {
           setIsOffer(true);
           setTokenOwner(response.data.owner);
           setBuyer(response.data.buyer);
-          
         })
         .catch((error) => {
           setDataOffer([error.response.data.message]);
@@ -136,11 +135,13 @@ const Offer = ({ url }) => {
                       </div>
                     </>
                   ) : (
-                    <div className="__buyer">
-                      <>
-                        <p>Produit déja vendu...</p>
-                      </>
-                    </div>
+                    <>
+                      {buyer.isBought && (
+                        <div className="__buyer">
+                          <p>Produit déja vendu...</p>
+                        </div>
+                      )}
+                    </>
                   )}
                   {!buyer.isBought && (
                     <Link
