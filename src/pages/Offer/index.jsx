@@ -46,6 +46,11 @@ const Offer = ({ url }) => {
           setTokenOwner(response.data.owner);
           console.log(response.data);
           setBuyer(response.data.buyer);
+          if (tokenOwner !== Cookies.get("token") && buyer.isBought) {
+            setTimeout(() => {
+              navigate("/"), 1000;
+            });
+          }
         })
         .catch((error) => {
           setDataOffer([error.response.data.message]);
@@ -53,10 +58,8 @@ const Offer = ({ url }) => {
         });
 
       setIsLoading(false);
-      if (tokenOwner !== Cookies.get("token") && buyer.isBought) {
-        redirected();
-      }
     };
+
     fetchData();
   }, [id]);
   const navigate = useNavigate();
@@ -136,7 +139,9 @@ const Offer = ({ url }) => {
                     </>
                   ) : (
                     <div className="__buyer">
-                      <p>Produit déja vendu...</p>
+                      <>
+                        <p>Produit déja vendu...</p>
+                      </>
                     </div>
                   )}
                   {!buyer.isBought && (
